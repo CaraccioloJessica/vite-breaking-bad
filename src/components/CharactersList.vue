@@ -1,6 +1,11 @@
 <script>
+import SingleCharacter from './SingleCharacter.vue'
+
 import { store } from '../store.js';
 export default {
+  components: {
+    SingleCharacter
+  },
   data() {
     return {
       store,
@@ -11,12 +16,7 @@ export default {
 
 <template>
   <section class="container">
-    <div class="card">
-      <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="">
-      <h4>nome</h4>
-      <h5>stato</h5>
-      <h5>specie</h5>
-    </div>
+    <SingleCharacter v-for="character in store.characterList" :key="character.id" :info="character" />
   </section>
 </template>
 
@@ -24,19 +24,12 @@ export default {
 @use '../styles/partials/variables' as *;
 
 .container {
+  display: flex;
+  flex-wrap: wrap;
   width: 900px;
   min-height: 400px;
   margin: 0 auto;
+  padding: 40px;
   background-color: $text-color;
-
-  h4 {
-    text-transform: uppercase;
-  }
-
-  h4,
-  h5 {
-    // da cambiare
-    color: black;
-  }
 }
 </style>
