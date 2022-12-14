@@ -9,9 +9,21 @@ export default {
 </script>
 
 <template>
-  <h1>Prova</h1>
+  <header>
+    <h1>
+      <img src="/img/Rick-And-Morty-Logo.png" alt="rick-and-morty-logo">
+    </h1>
+  </header>
 </template>
 
 <style lang="scss">
+h1 {
+  height: 150px;
 
+  img {
+    margin-left: 20px;
+    height: 100%;
+    object-fit: cover;
+  }
+}
 </style>
