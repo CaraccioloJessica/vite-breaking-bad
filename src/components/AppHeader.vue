@@ -16,7 +16,7 @@ export default {
   </header>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 h1 {
   height: 150px;
 
