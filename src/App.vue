@@ -19,8 +19,16 @@ export default {
   },
   methods: {
     getCharacters() {
+      let myUrl = store.apiURL;
+
+      // condizioni che al select stampano un parametro specifico
+      if (store.pickOut === 'alive' || store.pickOut === 'dead' || store.pickOut === 'unknown') {
+        myUrl += `?${store.apiStatusParameter}=${store.pickOut}`
+      }
+
+      // per connettersi all api
       axios
-        .get(store.apiURL)
+        .get(myUrl)
         .then(res => {
           store.characterList = res.data.results
         }
@@ -36,7 +44,8 @@ export default {
 <template>
   <AppHeader />
   <main>
-    <SelectInfo />
+    <!-- richiamo all'emit del componente-->
+    <SelectInfo @search="getCharacters" />
     <CharactersList />
   </main>
 
