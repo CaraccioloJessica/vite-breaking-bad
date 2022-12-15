@@ -26,9 +26,7 @@ export default {
 .container {
   display: flex;
   flex-wrap: wrap;
-  width: 900px;
   min-height: 400px;
-  margin: 0 auto;
   padding: 40px;
   background-color: $text-color;
 }
