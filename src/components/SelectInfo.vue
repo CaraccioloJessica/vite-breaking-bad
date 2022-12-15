@@ -1,8 +1,10 @@
 <script>
+import { store } from '../store.js';
+
 export default {
   data() {
     return {
-
+      store,
     }
   }
 }
@@ -10,11 +12,12 @@ export default {
 
 <template>
   <div class="container">
-    <select name="info" id="info">
-      <option disabled selected>Seleziona status</option>
+    <!-- evento al click che si collega ad App tramite emit, per poter poi stampare in pagina i risultati in base al parametro specifico -->
+    <select name="info" id="info" v-model="store.pickOut" @click="$emit('search')">
+      <option value="status">Seleziona o Resetta</option>
       <option value="alive">Alive</option>
       <option value="dead">Dead</option>
-      <option value="unknow">Unknow</option>
+      <option value="unknown">Unknown</option>
     </select>
   </div>
 </template>
