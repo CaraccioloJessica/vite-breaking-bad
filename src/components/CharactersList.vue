@@ -16,6 +16,7 @@ export default {
 
 <template>
   <section class="container">
+    <!-- componente figlio che si collega al padre, in cui poi cicliamo nell'array dell api per stampare il risultato in pagina -->
     <SingleCharacter v-for="character in store.characterList" :key="character.id" :info="character" />
   </section>
 </template>
