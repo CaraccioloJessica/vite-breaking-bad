@@ -1,11 +1,13 @@
 <script>
 export default {
+  // oggetto per collegarsi al componente padre
   props: ['info']
 }
 </script>
 
 <template>
   <div class="card">
+    <!-- richiamo delle proprietà dell api che ci servono -->
     <img :src="info.image" :alt="info.name">
     <h4>{{ info.name }}</h4>
     <h5>{{ info.status }}</h5>
