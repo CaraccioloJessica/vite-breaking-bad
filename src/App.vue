@@ -2,13 +2,15 @@
 import axios from 'axios';
 import AppHeader from './components/AppHeader.vue'
 import CharactersList from './components/CharactersList.vue'
+import SelectInfo from './components/SelectInfo.vue'
 
 import { store } from './store.js';
 
 export default {
   components: {
     AppHeader,
-    CharactersList
+    CharactersList,
+    SelectInfo
   },
   data() {
     return {
@@ -34,6 +36,7 @@ export default {
 <template>
   <AppHeader />
   <main>
+    <SelectInfo />
     <CharactersList />
   </main>
 
